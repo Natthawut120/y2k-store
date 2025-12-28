@@ -15,160 +15,133 @@
             <ul>
                 <li><a href="index.html">หน้าหลัก</a></li>
                 <li><a href="shop.html">สินค้า</a></li>
-                <li><a href="#">เกี่ยวกับ</a></li>
+                <li><a href="about.html">เกี่ยวกับ</a></li>
                 <li><a href="#">ติดต่อ</a></li>
             </ul>
         </nav>
     </header>
 
+    <div class="search">
+        <form action="" class="search-bar" onsubmit="handleSearch(event)">
+            <input type="text" placeholder="search anything" name="q" id="searchInput">
+            <button type="submit">🔍</button>
+        </form>
+    </div>
+
+    <div id="searchResult"
+        style="display: none; text-align: center; padding: 10px 20px; margin: 10px auto; max-width: 800px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 20px; color: rgba(255, 255, 255, 0.9);">
+        <p id="searchText"></p>
+    </div>
+
     <section class="products">
-        <div class="product-card">
+        <div class="product-card" onclick="showModal(0)">
             <img src="https://down-th.img.susercontent.com/file/sg-11134201-7rasf-majjoxwftipv15@resize_w450_nl.webp"
                 alt="Hoodie 1">
             <h3>Harajuku Y2k Skeleton Goddess</h3>
             <p>฿134 - ฿211</p>
-            <button onclick="window.open('https://s.shopee.co.th/1LXrlyYgih')"
-                style="background: transparent; border: none; color: white; cursor: pointer; font-size: 1rem; backdrop-filter: none;">
+            <button onclick="event.stopPropagation(); window.open('https://s.shopee.co.th/1LXrlyYgih')">
                 สั่งซื้อ
             </button>
         </div>
-        <div class="product-card">
+
+        <div class="product-card" onclick="showModal(1)">
             <img src="https://down-th.img.susercontent.com/file/sg-11134201-824hc-mejon2b8gx6t7e@resize_w450_nl.webp"
                 alt="Hoodie 2">
             <h3>Y2K Street hoodie ลายพิมพ์ตัวอักษรและดาว</h3>
             <p>฿134 - ฿270</p>
-            <button onclick="window.open('https://s.shopee.co.th/12UBTEN4i')"
-                style="background: transparent; border: none; color: white; cursor: pointer; font-size: 1rem; backdrop-filter: none;">
+            <button onclick="event.stopPropagation(); window.open('https://s.shopee.co.th/12UBTEN4i')">
                 สั่งซื้อ
             </button>
         </div>
-        <div class="product-card">
+
+        <div class="product-card" onclick="showModal(2)">
             <img src="https://down-th.img.susercontent.com/file/sg-11134201-7rfha-m9pe9hpcmnk0c0@resize_w450_nl.webp"
-            alt="Hoodie 3">
+                alt="Hoodie 3">
             <h3>Ari Jersey Graphic Cal Cotton</h3>
             <p>฿150</p>
-            <button onclick="window.open('https://s.shopee.co.th/5L40XBaujA')"
-                style="background: transparent; border: none; color: white; cursor: pointer; font-size: 1rem; backdrop-filter: white;">
+            <button onclick="event.stopPropagation(); window.open('https://s.shopee.co.th/5L40XBaujA')">
                 สั่งซื้อ
             </button>
         </div>
-        <div class="product-card">
-            <img src="https://down-zl-th.img.susercontent.com/sg-11134201-7rdx4-m0b0ao0xk0xff1.webp" alt="hoodie 4">
+
+        <div class="product-card" onclick="showModal(3)">
+            <img src="https://down-zl-th.img.susercontent.com/sg-11134201-7rdx4-m0b0ao0xk0xff1.webp" alt="Hoodie 4">
             <h3>Dark Retro Hoodie Y2K</h3>
-            <p>฿256.00</p>  
-            <button onclick="window.open('https://s.shopee.co.th/3qFIzURevj')"
-                style="background: transparent; border: none; color: white; cursor: pointer; font-size: 1rem; backdrop-filter: white;">
-                สั่งซื้อ</button>
+            <p>฿256.00</p>
+            <button onclick="event.stopPropagation(); window.open('https://s.shopee.co.th/3qFIzURevj')">
+                สั่งซื้อ
+            </button>
         </div>
-        <div class="product-card">
-            <img src="https://down-zl-th.img.susercontent.com/sg-11134201-7rcer-lru19ah0fs6m23.webp" alt="hoodie 5">
-            <h3>เสื้อฮู้ด โครงกระดูก1mill ฮู้ด Hoodie Y2k Cotton Casual Black White Tops Graphic</h3>
+
+        <div class="product-card" onclick="showModal(4)">
+            <img src="https://down-zl-th.img.susercontent.com/sg-11134201-7rcer-lru19ah0fs6m23.webp" alt="Hoodie 5">
+            <h3>เสื้อฮู้ด โครงกระดูก1mill ฮู้ด Hoodie Y2k Cotton Casual</h3>
             <p>฿249.00</p>
-            <button onclick="window.open('https://s.shopee.co.th/7V8bSXwYYy')"
-                style="background: transparent; border: none; color: white; cursor: pointer; font-size: 1rem; backdrop-filter: white;">
-                สั่งซื้อ</button>
+            <button onclick="event.stopPropagation(); window.open('https://s.shopee.co.th/7V8bSXwYYy')">
+                สั่งซื้อ
+            </button>
         </div>
-        <div class="product-card">
-            <img src=" https://down-zl-th.img.susercontent.com/th-11134207-7rase-m12jff9grdkp2f.webp" alt="hoodie 6">
+
+        <div class="product-card" onclick="showModal(5)">
+            <img src="https://down-zl-th.img.susercontent.com/th-11134207-7rase-m12jff9grdkp2f.webp" alt="Hoodie 6">
             <h3>(PRE) Dark Matter Hoodie Zip 01</h3>
             <p>฿2,410.00</p>
-            <button onclick="window.open('https://s.shopee.co.th/6AdDsYgMWQ')"
-                style="background: transparent; border: none; color: white; cursor: pointer; font-size: 1rem; backdrop-filter: white;">
-                สั่งซื้อ</button>
-        </div>
-        <div class="product-card">
-            <img src="" alt="">
-            <h3></h3>
-            <p></p>
-            <button onclick="window.open('')"
-                style="background: transparent; border: none; color: white; cursor: pointer; font-size: 1rem; backdrop-filter: white;">
-                สั่งซื้อ</button>
-        </div>
-        <div class="product-card">
-            <img src="" alt="">
-            <h3></h3>
-            <p></p>
-            <button onclick="window.open('')"
-                style="background: transparent; border: none; color: white; cursor: pointer; font-size: 1rem; backdrop-filter: white;">
-                สั่งซื้อ</button>
-                </div>
-        <div class="product-card">
-            <img src="" alt="">
-            <h3></h3>
-            <p></p>
-            <button onclick="window.open('')"
-                style="background: transparent; border: none; color: white; cursor: pointer; font-size: 1rem; backdrop-filter: white;">
-                สั่งซื้อ</button>
-        </div>
-        <div class="product-card">
-            <img src="" alt="">
-            <h3></h3>
-            <p></p>
-            <button onclick="window.open('')"
-                style="background: transparent; border: none; color: white; cursor: pointer; font-size: 1rem; backdrop-filter: white;">
-                สั่งซื้อ</button>
-        </div>
-        <div class="product-card">
-            <img src="" alt="">
-            <h3></h3>
-            <p></p>
-            <button onclick="window.open('')"
-                style="background: transparent; border: none; color: white; cursor: pointer; font-size: 1rem; backdrop-filter: white;">
-                สั่งซื้อ</button>
-        </div>
-        <div class="product-card">
-            <img src="" alt="">
-            <h3></h3>
-            <p></p>
-            <button onclick="window.open('')"
-                style="background: transparent; border: none; color: white; cursor: pointer; font-size: 1rem; backdrop-filter: white;">
-                สั่งซื้อ</button>
-        </div>
-        <div class="product-card">
-            <img src="" alt="">
-            <h3></h3>
-            <p></p>
-            <button onclick="window.open('')"
-                style="background: transparent; border: none; color: white; cursor: pointer; font-size: 1rem; backdrop-filter: white;">
-                สั่งซื้อ</button>
-        </div>
-        <div class="product-card">
-            <img src="" alt="">
-            <h3></h3>
-            <p></p>
-            <button onclick="window.open('')"
-                style="background: transparent; border: none; color: white; cursor: pointer; font-size: 1rem; backdrop-filter: white;">
-                สั่งซื้อ</button>
-        </div>
-        <div class="product-card">
-            <img src="" alt="">
-            <h3></h3>
-            <p></p>
-            <button onclick="window.open('')"
-                style="background: transparent; border: none; color: white; cursor: pointer; font-size: 1rem; backdrop-filter: white;">
-                สั่งซื้อ</button>
-        </div>
-        <div class="product-card">
-            <img src="" alt="">
-            <h3></h3>
-            <p></p>
-            <button onclick="window.open('')"
-                style="background: transparent; border: none; color: white; cursor: pointer; font-size: 1rem; backdrop-filter: white;">
-                สั่งซื้อ</button>
-        </div>
-        <div class="product-card">
-            <img src="" alt="">
-            <h3></h3>
-            <p></p>
-            <button onclick="window.open('')"
-                style="background: transparent; border: none; color: white; cursor: pointer; font-size: 1rem; backdrop-filter: white;">
-                สั่งซื้อ</button>
+            <button onclick="event.stopPropagation(); window.open('https://s.shopee.co.th/6AdDsYgMWQ')">
+                สั่งซื้อ
+            </button>
         </div>
     </section>
+
+    <!-- Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <img id="modalImage" class="modal-image" src="" alt="">
+                </div>
+                <div class="modal-details">
+                    <h3 id="modalPrice"></h3>
+                    <p id="modalDescription"></p>
+                    <div class="detail-item">
+                        <strong>📦 วัสดุ:</strong>
+                        <span id="modalMaterial"></span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>📏 ไซส์:</strong>
+                        <span id="modalSize"></span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>🎨 สี:</strong>
+                        <span id="modalColor"></span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>✨ จุดเด่น:</strong>
+                        <span id="modalFeature"></span>
+                    </div>
+                    <button class="buy-button" id="modalBuyButton">สั่งซื้อทันที 🛒</button>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <div class="close-btn" onclick="closeModal()">×</div>
+                <div class="modal-image" id="modalImage"></div>
+                <div class="modal-title" id="modalTitle"></div>
+                <div class="modal-description" id="modalDescription"></div>
+                <div class="modal-price" id="modalPrice"></div>
+                <a class="buy-btn" id="buyBtn" href="#" target="_blank">
+                    🛒 สั่งซื้อที่ Shopee
+                </a>
+            </div>
+        </div>
 
     <footer class="footer">
         <p>&copy; จัดทำโดย #Natthawut</p>
     </footer>
-</body>
-
+<script src="backend.js"></script></body>
 </html>
